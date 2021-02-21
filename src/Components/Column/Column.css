@@ -1,0 +1,78 @@
+.column-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "r1"
+        "r2"
+        "r3"
+        "r4"
+        "r5"
+        "r6";
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.r1 { grid-area: r1; }
+
+.r2 { grid-area: r2; }
+
+.r3 { grid-area: r3; }
+
+.r4 { grid-area: r4; }
+
+.r5 { grid-area: r5; }
+
+.r6 { grid-area: r6; }
+
+.item{
+    width: 85px;
+    height: 85px;
+    border-radius: 100px;
+}
+
+.column1:hover > div > .white{
+    background: #a5b1c2;
+}
+
+.column2:hover > div > .white{
+    background: #a5b1c2;
+}
+
+.column3:hover > div > .white{
+    background: #a5b1c2;
+}
+
+.column4:hover > div > .white{
+    background: #a5b1c2;
+}
+
+.column5:hover > div > .white{
+    background: #a5b1c2;
+}
+
+.column6:hover > div > .white{
+    background: #a5b1c2;
+}
+
+.column7:hover > div > .white{
+    background: #a5b1c2;
+}
+  
+.white{
+    background: #dfe4ea;
+}
+
+.red{
+    background: #e84118;
+}
+
+.yellow{
+    background: #fbc531;
+}

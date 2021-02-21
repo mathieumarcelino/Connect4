@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap');
+
+.win{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.win-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.win-text{
+  font-size: 92px;
+  font-family: 'Cabin', sans-serif;
+}
+
+.yellow-text{
+  color: #fbc531;
+}
+
+.red-text{
+  color: #e84118;
+}
+
+.win-button{
+  font-family: 'Cabin', sans-serif;
+  width: 140px;
+  height: 40px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.win-button:hover{
+  background: #dddddd;
+}

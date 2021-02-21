@@ -1,0 +1,27 @@
+.grid-container {
+    cursor: pointer;
+    width: 840px;
+    height: 720px;
+    background: #273c75;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "c1 c2 c3 c4 c5 c6 c7";
+  }
+  
+  .c1 { grid-area: c1; }
+  
+  .c2 { grid-area: c2; }
+  
+  .c3 { grid-area: c3; }
+  
+  .c4 { grid-area: c4; }
+  
+  .c5 { grid-area: c5; }
+  
+  .c6 { grid-area: c6; }
+  
+  .c7 { grid-area: c7; }
+  
