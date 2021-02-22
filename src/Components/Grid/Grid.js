@@ -66,106 +66,111 @@ function Grid() {
     const handleClick = (event) => {
         let column = null;
         let update = false;
-        if(event === 1){
-            if(context.c1[5] === 0){
-                setContext({
-                    ...context,
-                    c1: checkColumns(context.c1),
-                });
-                column = context.c1;
-                update = true;
-            }
-        } else if (event === 2){
-            if(context.c2[5] === 0){
-                setContext({
-                    ...context,
-                    c2: checkColumns(context.c2),
-                });
-                column = context.c2;
-                update = true;
-            }
-        } else if (event === 3){
-            if(context.c3[5] === 0){
-                setContext({
-                    ...context,
-                    c3: checkColumns(context.c3),
-                });
-                column = context.c3;
-                update = true;
-            }
-        }
-        else if (event === 4){
-            if(context.c4[5] === 0){
-                setContext({
-                    ...context,
-                    c4: checkColumns(context.c4),
-                });
-                column = context.c4;
-                update = true;
-            }
-        }
-        else if (event === 5){
-            if(context.c5[5] === 0){
-                setContext({
-                    ...context,
-                    c5: checkColumns(context.c5),
-                });
-                column = context.c5;
-                update = true;
-            }
-        }
-        else if (event === 6){
-            if(context.c6[5] === 0){
-                setContext({
-                    ...context,
-                    c6: checkColumns(context.c6),
-                });
-                column = context.c6;
-                update = true;
-            }
-        }
-        else if (event === 7){
-            if(context.c7[5] === 0){
-                setContext({
-                    ...context,
-                    c7: checkColumns(context.c7),
-                });
-                column = context.c7;
-                update = true;
-            }
-        }
-        
-        if(update === true){
 
-            let array = [context.c1, context.c2, context.c3, context.c4, context.c5, context.c6, context.c7];
-            let winner = null;
-            let winnerColumn = checkWinColumn(column);
-            let winnerRaw = checkWinRaw(array);
-            let winnerDiagonalRight = checkWinDiagonalRight(array);
-            let winnerDiagonalLeft = checkWinDiagonalLeft(array);
+        if(context.winner === null){
 
-            if(winnerColumn){
-                winner = winnerColumn;
+            if(event === 1){
+                if(context.c1[5] === 0){
+                    setContext({
+                        ...context,
+                        c1: checkColumns(context.c1),
+                    });
+                    column = context.c1;
+                    update = true;
+                }
+            } else if (event === 2){
+                if(context.c2[5] === 0){
+                    setContext({
+                        ...context,
+                        c2: checkColumns(context.c2),
+                    });
+                    column = context.c2;
+                    update = true;
+                }
+            } else if (event === 3){
+                if(context.c3[5] === 0){
+                    setContext({
+                        ...context,
+                        c3: checkColumns(context.c3),
+                    });
+                    column = context.c3;
+                    update = true;
+                }
+            }
+            else if (event === 4){
+                if(context.c4[5] === 0){
+                    setContext({
+                        ...context,
+                        c4: checkColumns(context.c4),
+                    });
+                    column = context.c4;
+                    update = true;
+                }
+            }
+            else if (event === 5){
+                if(context.c5[5] === 0){
+                    setContext({
+                        ...context,
+                        c5: checkColumns(context.c5),
+                    });
+                    column = context.c5;
+                    update = true;
+                }
+            }
+            else if (event === 6){
+                if(context.c6[5] === 0){
+                    setContext({
+                        ...context,
+                        c6: checkColumns(context.c6),
+                    });
+                    column = context.c6;
+                    update = true;
+                }
+            }
+            else if (event === 7){
+                if(context.c7[5] === 0){
+                    setContext({
+                        ...context,
+                        c7: checkColumns(context.c7),
+                    });
+                    column = context.c7;
+                    update = true;
+                }
             }
             
-            if (winnerRaw){
-                winner = winnerRaw;
-            }
-            
-            if (winnerDiagonalLeft){
-                winner = winnerDiagonalLeft;
-            }
-            
-            if (winnerDiagonalRight){
-                winner = winnerDiagonalRight;
+            if(update === true){
+
+                let array = [context.c1, context.c2, context.c3, context.c4, context.c5, context.c6, context.c7];
+                let winner = null;
+                let winnerColumn = checkWinColumn(column);
+                let winnerRaw = checkWinRaw(array);
+                let winnerDiagonalRight = checkWinDiagonalRight(array);
+                let winnerDiagonalLeft = checkWinDiagonalLeft(array);
+
+                if(winnerColumn){
+                    winner = winnerColumn;
+                }
+                
+                if (winnerRaw){
+                    winner = winnerRaw;
+                }
+                
+                if (winnerDiagonalLeft){
+                    winner = winnerDiagonalLeft;
+                }
+                
+                if (winnerDiagonalRight){
+                    winner = winnerDiagonalRight;
+                }
+
+                setContext({
+                    ...context,
+                    player: checkPlayer(context.player),
+                    winner: winner,
+                });
+                
             }
 
-            setContext({
-                ...context,
-                player: checkPlayer(context.player),
-                winner: winner,
-            });
-            
         }
     }
 
