@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap');
 
 .win{
-  height: 100vh;
   width: 100vw;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #fbc531;
+}
+
+.top{
+  top:0;
+}
+
+.bottom{
+  bottom:0;
 }
 
 .win-box{
@@ -18,14 +26,8 @@
 .win-text{
   font-size: 92px;
   font-family: 'Cabin', sans-serif;
-}
-
-.yellow-text{
-  color: #fbc531;
-}
-
-.red-text{
-  color: #e84118;
+  margin-bottom: 12px;
+  color: #ffffff;
 }
 
 .win-button{
@@ -42,4 +44,28 @@
 
 .win-button:hover{
   background: #dddddd;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .win-text{
+    font-size: 72px;
+  }
+
+  .win-button{
+    width: 120px;
+    height: 38px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .win-text{
+    font-size: 52px;
+  }
+
+  .win-button{
+    width: 100px;
+    height: 34px;
+    font-size: 16px;
+  }
 }

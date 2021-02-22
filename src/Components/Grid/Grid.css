@@ -25,3 +25,17 @@
   
   .c7 { grid-area: c7; }
   
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .grid-container {
+    width: 700px;
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    width: 320px;
+    height: 270px;
+  }
+}

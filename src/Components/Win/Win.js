@@ -1,6 +1,7 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import { AppContext } from "../../Context/AppContext";
 import Confetti from 'react-confetti'
+import AnimateHeight from 'react-animate-height';
 import { useWindowSize } from '@react-hook/window-size'
 import './Win.css';
 
@@ -9,8 +10,24 @@ function Win() {
     const { width, height } = useWindowSize();
 
     const [context, setContext] = useContext(AppContext);
+
+    const [state, setState] = useState({
+        height: 0,
+        position: "bottom",
+        winner: null,
+    })
+
+    useEffect(() => {
+        if(context.winner !== null){
+            setState({
+                height: "100%",
+                position: "top",
+                winner: context.winner,
+            });
+        }
+    }, [context.winner])
     
-    const reset = (event) => {
+    const reset = () => {
         setContext({
             player: "Y",
             winner: null,
@@ -22,31 +39,22 @@ function Win() {
             c6: [0,0,0,0,0,0],
             c7: [0,0,0,0,0,0],    
         });
+        setState({
+            ...state,
+            height: 0,
+            position: "bottom",
+        });
     }
 
-    if(context.winner === "Y"){
-        return (
-            <div className="win">
-                <div className="win-box">
-                    <span className="win-text yellow-text">yellow win !</span>
-                    <button className="win-button" onClick={() => reset()}>replay</button>
-                </div>
-                <Confetti width={width} height={height} />
+    return (
+        <AnimateHeight className={state.position === "top" ? "top win" : state.position === "bottom" ? "bottom win" : "win"} duration={ 800 } height={state.height} style={{ background: `${state.winner === "Y" ? "#fbc531" : state.winner === "R" ? "#e84118" : ""}` }}>
+            <div className="win-box">
+                <span className="win-text">{state.winner === "Y" ? "yellow won !" : state.winner === "R" ? "red won !" : ""}</span>
+                <button className="win-button" onClick={() => reset()}>replay</button>
             </div>
-        );
-    } else if (context.winner === "R"){
-        return (
-            <div className="win">
-                <div className="win-box">
-                    <span className="win-text red-text">red win !</span>
-                    <button className="win-button" onClick={() => reset()}>replay</button>
-                </div>
-                <Confetti width={width} height={height} />
-            </div>
-        );
-    } else {
-        return ("");
-    }
+            <Confetti width={width} height={height} />
+        </AnimateHeight>
+    );
 }
 
 export default Win;
