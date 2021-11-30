@@ -29,8 +29,10 @@ function Win() {
     
     const reset = () => {
         setContext({
+            ...context,
             player: "Y",
             winner: null,
+            reset: true,
             c1: [0,0,0,0,0,0],
             c2: [0,0,0,0,0,0],
             c3: [0,0,0,0,0,0],

@@ -9,6 +9,9 @@ export const AppProvider = (props) => {
     const [data, setData] = useState({
         player: "Y",
         winner: null,
+        wait: false,
+        reset: false,
+        mode: null,
         c1: [0,0,0,0,0,0],
         c2: [0,0,0,0,0,0],
         c3: [0,0,0,0,0,0],
