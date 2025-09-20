@@ -1,0 +1,15 @@
+version: '3.8'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  connect4-app:
+    container_name: connect4-app
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - proxy
