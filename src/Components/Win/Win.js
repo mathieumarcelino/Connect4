@@ -51,8 +51,8 @@ function Win() {
     return (
         <AnimateHeight className={state.position === "top" ? "top win" : state.position === "bottom" ? "bottom win" : "win"} duration={ 800 } height={state.height} style={{ background: `${state.winner === "Y" ? "#fbc531" : state.winner === "R" ? "#e84118" : ""}` }}>
             <div className="win-box">
-                <span className="win-text">{state.winner === "Y" ? "yellow won !" : state.winner === "R" ? "red won !" : ""}</span>
-                <button className="win-button" onClick={() => reset()}>replay</button>
+                <span className="win-text">{state.winner === "Y" ? "Yellow won !" : state.winner === "R" ? "Red won !" : ""}</span>
+                <button className="win-button" onClick={() => reset()}>Replay</button>
             </div>
             <Confetti width={width} height={height} />
         </AnimateHeight>

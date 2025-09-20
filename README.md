@@ -1,7 +1,7 @@
-# Puissance 4
+# Connect 4
 
 ## Link
-[mathieumarcelino.fr/puissance4](https://mathieumarcelino.fr/puissance4)
+[connect4.mathi3u.com](https://connect4.mathi3u.com/)
 
 ## Demo
 ![](public/demo.gif)

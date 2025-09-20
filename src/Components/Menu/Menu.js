@@ -37,10 +37,10 @@ function Menu() {
     return (
         <AnimateHeight className={state.position === "top" ? "top menu" : state.position === "bottom" ? "bottom menu" : "menu"} duration={ 800 } height={state.height}>
             <div className="menu-box">
-                <span className="menu-text">choose a mode</span>
+                <span className="menu-text">Choose a mode</span>
                 <div className="menu-container">
-                    <button className="menu-button" onClick={() => choice("solo")}>solo</button>
-                    <button className="menu-button" onClick={() => choice("duo")}>duo</button>
+                    <button className="menu-button" onClick={() => choice("solo")}>Solo</button>
+                    <button className="menu-button" onClick={() => choice("duo")}>Duo</button>
                 </div>
             </div>
         </AnimateHeight>

@@ -2,17 +2,17 @@
   "name": "connect4",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://mathieumarcelino.fr/puissance4",
+  "homepage": "https://connect4.mathi3u.com/",
   "dependencies": {
     "@react-hook/window-size": "^3.0.7",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
-    "react": "^17.0.1",
+    "react": "^18.2.0",
     "react-animate-height": "^2.0.23",
     "react-confetti": "^6.0.0",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.2",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
